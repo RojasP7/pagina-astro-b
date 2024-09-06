@@ -13,34 +13,106 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<header>
+			<div class="top header container">
+				<img src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.73/mercadolibre/logo_large_25years@2x.png" alt="">
+				<div class="input">
+					<input placeholder="Escribe que quieres buscar"/>
+					<button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+						<path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+					  </svg>
+					  </button>
+				</div>
+				<p>publicidad</p>
+			</div>
+		</header>
+		<div class="banner">
+
+		</div>
+		<div class="cards container">
+			<div class="card">
+				tarjeta 1
+			</div>
+			<div class="card">
+				tarjeta 2
+			</div>
+			<div class="card">
+				tarjeta 3
+			</div>
+			<div class="card">
+				tarjeta 4
+			</div>
+			<div class="card">
+				tarjeta 5
+			</div>
+			<div class="card">
+				tarjeta 6
+			</div>
+		</div>
+		<!-- <slot /> -->
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+<style>
+	html, body{
+		padding: 0;
+		margin: 0;
+		background-color: #dddcdc;
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
+	header{
+		height: 80px;
+		background: #ffee00;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+	header img{
+		width: 120px;
 	}
+	header input{
+
+		display: inline-block;
+		width: 100%;
+		padding: 10px 0px;
+		border-top-left-radius: 3px;
+		border-bottom-left-radius: 3px;
+		border: none;
+		outline: none;
+	}
+	header button{
+		display: inline-block;
+		width: 32px;
+		border: none;
+		background: #fff;
+		height: 36px;
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+	}
+	.input{
+		display: flex;
+		align-items: center;
+	}
+	.banner{
+		height: 280px;
+		background:linear-gradient(to bottom,#ffee00 70%, #dddcdc);
+	}
+	.container{
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+	.cards{
+		gap: 10px;
+		display: flex;
+		margin-top: -80px;
+		height: 240px;
+		/* column-count: 6; */
+		/* column-gap: ; */
+
+	}
+	.card{
+		background-color: #fff;
+		border-radius: 6px;
+		flex-grow: 1;
+	}
+	.top header{
+		column-count: 3;
+	}
+
+
 </style>
