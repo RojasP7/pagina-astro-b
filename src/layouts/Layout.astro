@@ -1,170 +1,325 @@
 ---
-const { title, theme } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<header>
-			<div class="top-header container">
-				<img
-					src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.73/mercadolibre/logo_large_25years_v2.png"
-				/>
-				<div class="input">
-					<input placeholder="Escribe algo y encuentra" />
-					<button>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke-width="1.5"
-							stroke="currentColor"
-							class="size-6"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-							></path>
-						</svg>
-					</button>
-				</div>
-				<p class="publicidad"><img src="https://http2.mlstatic.com/D_NQ_873803-MLA78739315606_092024-OO.webp"></p>
-			</div>
-		</header>
-		<div class="h-72 bg-gradient-to-b from-[#f7ea33] to-[#e6e3e3] to-100%"></div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/5.21.22/mercadolibre/favicon.svg"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <div class="top-header">
+        <div class="imagen">
+          <img
+            src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.73/mercadolibre/logo_large_25years_v2.png"
+            alt=""
+          />
+        </div>
+        <div class="input">
+          <input type="text" placeholder="Buscar productos, marcas y más..." />
+          <div class="separacion">
+            <span></span>
+          </div>
+          <button
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div class="publicidad">
+          <a href="https://www.disneyplus.com/es-us" target="_blank"
+            ><img
+              src="https://http2.mlstatic.com/D_NQ_873803-MLA78739315606_092024-OO.webp"
+              alt=""
+            /></a
+          >
+        </div>
+      </div>
+      <div class="bot-header"></div> 
+    </header>
+	<header>
+		<div class="ubicacion">
+			<svg
+			  xmlns="http://www.w3.org/2000/svg"
+			  fill="none"
+			  viewBox="0 0 24 24"
+			  stroke-width="1.5"
+			  stroke="currentColor"
+			  class="icon-ubicacion"
+			>
+			  <path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				d="M12 19.5l6-6a7.5 7.5 0 1 0-12 0l6 6zm0 0l6-6M12 10.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"
+			  />
+			</svg>
+			<span>Ingresa tu ubicación</span>
+		  </div>
+	  
+		  <div class="user-options">
+			<span>Crea tu cuenta</span>
+			<span>Ingresa</span>
+			<span>Mis compras</span>
+			<svg
+			  xmlns="http://www.w3.org/2000/svg"
+			  fill="none"
+			  viewBox="0 0 24 24"
+			  stroke-width="1.5"
+			  stroke="currentColor"
+			  class="icon-carrito"
+			>
+			  <path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				d="M3 3h2l.4 2m3.6 0h8.4l1.1 6H7L5.1 3H3zm0 0l1.1 6m0 0l1.1 6h10.4l1.1-6H6l1.1-6H6zM7 15h10v5H7v-5zm-1 5h12"
+			  />
+			</svg>
+		  </div>
+		</div>
+	  
+		<div class="bot-header">
+		  <ul class="nav-links">
+			<li>Categorías</li>
+			<li>Ofertas</li>
+			<li>Cupones</li>
+			<li>Supermercado</li>
+			<li>Moda</li>
+			<li>Vender</li>
+			<li>Ayuda / PQR</li>
+		  </ul>
+		</div>
+	</header>
+    <div class="h-[320px] to-60% bg-gradient-to-b from-[#ffe600] to-[#f2f2f2]" ></div>
 
-		<div class="flex mt-20 h-60 gap-3 max-w-[1200px] mx-auto">
-			<div class="flex-grow bg-white rounded">tarjeta 1</div>
-			<div class="flex-grow bg-white rounded">tarjeta 2</div>
-			<div class="flex-grow bg-white rounded">tarjeta 3</div>
-			<div class="flex-grow bg-white rounded">tarjeta 4</div>
-			<div class="flex-grow bg-white rounded">tarjeta 5</div>
-			<div class="flex-grow bg-white rounded">tarjeta 6</div>
-		</div>
-		<div
-			class=" group transition-colors hover:bg-blue-700 hover:cursor-pointer rounded inline-flex items-center px-4 py-2 text-white bg-blue-500"
-		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke-width="1.5"
-				stroke="currentColor"
-				class="size-4 mr-1 mt-1 group-hover:animate-spin"
-			>
-				<path
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
-				></path>
-			</svg>
-			Presioname!
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke-width="1.5"
-				stroke="currentColor"
-				class="size-4 mt-1 ml-1"
-			>
-				<path
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
-			</svg>
-		</div>
-		<!-- <slot /> -->
-	</body>
+    <div class="mt-[-80px] h-48 flex gap-3 max-w-[1200px] mx-auto">
+      <div class="flex-grow bg-white rounded-lg">tarjeta 1</div>
+      <div class="flex-grow bg-white rounded-lg">tarjeta 2</div>
+      <div class="flex-grow bg-white rounded-lg">tarjeta 3</div>
+      <div class="flex-grow bg-white rounded-lg">tarjeta 4</div>
+      <div class="flex-grow bg-white rounded-lg">tarjeta 5</div>
+      <div class="flex-grow bg-white rounded-lg">tarjeta 6</div>
+    </div>
+    <div
+      class="group bg-blue-500 text-white py-2 px-4 inline-flex rounded hover:cursor-pointer hover:bg-blue-700 transition-colors duration-300 items-center"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-4 mt-[4px] mr-1 group-hover:animate-spin"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+        ></path>
+      </svg>
+
+      Presioname!
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-4 mt-[4px] ml-1"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+      </svg>
+    </div>
+    <!-- <slot /> -->
+  </body>
 </html>
-<style>
-	html,
-	body {
-		padding: 0;
-		margin: 0;
-		background-color: rgb(230, 227, 227);
-	}
+<style is:global>
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+  }
 
-	header {
-		height: 80px;
-		background: #f7ea33;
-		padding-top: 12px;
-	}
+  header {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    background: #ffe600;
+    padding-top: 12px;
+  }
 
-	header img {
-		width: 120px;
-	}
+  .imagen {
+    width: 120px;
+  }
+  .imagen img {
+    width: 130px;
+  }
 
-	header input {
-		box-sizing: border-box;
-		display: inline;
-		width: 80%;
-		padding: 10px 8px;
-		border-top-left-radius: 3px;
-		border-bottom-left-radius: 3px;
-		border: none;
-		height: 36px;
-		/* border: 1px solid rgb(223, 220, 220); */
-		outline: none;
-	}
+  header input {
+    box-sizing: border-box;
+    display: inline;
+    width: 80%;
+    padding: 10px 8px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border: none;
+    outline: none;
+    background: #fff;
+    height: 40px;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    box-shadow: 3px 1px 2px rgba(0, 0, 0, 0.1);
+    font-weight: 380;
+    color: #636363;
+    padding-left: 15px;
+  }
 
-	header button {
-		display: inline;
-		width: 32px;
-		border: none;
-		background: #fff;
-		height: 36px;
-		border-top-right-radius: 3px;
-		border-bottom-right-radius: 3px;
-	}
+  header button {
+    display: inline;
+    border: none;
+    width: 32px;
+    background: #fff;
+    height: 40px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    cursor: pointer;
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.1);
+  }
 
-	button svg {
-		stroke: grey;
-	}
+  .separacion {
+    height: 40px;
+    width: 1px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+  }
 
-	.input {
-		display: flex;
-		align-items: center;
-	}
-	.publicidad{
+  .separacion span {
+    background-color: #b1b1b1;
+    width: 1px;
+    height: 20px;
+  }
 
-	}
+  button svg {
+    stroke: #676767;
+  }
+  .input {
+    width: 700px;
+    display: flex;
+    justify-content: center;
+  }
 
-	/* .banner {
-		height: 280px;
-		background: linear-gradient(
-			to bottom,
-			#f7ea33 60%,
-			#e6e3e3 100%
-		);
-	} */
+  .publicidad img {
+    width: 350px;
+    height: 40px;
+  }
 
-	/* .container {
-		max-width: 1200px;
-		margin: 0 auto;
-	} */
-	/* .cards {
-		gap: 10px;
-		display: flex;
-		margin-top: -80px;
-		height: 240px;
-	}
+  /*.banner {
+    height: 280px;
+    background: linear-gradient(to bottom, #ffe600 60%, #f2f2f2 100%);
+  }*/
 
-	.card {
-		flex-grow: 1;
-		background-color: #fff;
-		border-radius: 6px;
-	} */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .cards {
+    margin-top: -80px;
+    height: 190px;
+    display: flex;
+    gap: 10px;
+  }
+  .card {
+    /* min-width: 180px; */
+    flex-grow: 1;
+    background-color: #fff;
+    border-radius: 6px;
+  }
 
-	.top-header {
-		column-count: 3;
-	}
+  .top-header {
+    width: 1200px;
+    column-count: 3;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .top-header span {
+    display: block;
+  }
+
+  .ubicacion {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.icon-ubicacion {
+  width: 20px;
+  margin-right: 8px;
+}
+
+.user-options {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  color: #333;
+}
+
+.icon-carrito {
+  width: 24px;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.nav-links li {
+  cursor: pointer;
+}
+
+.bot-header {
+  display: flex;
+  justify-content: center;
+  background-color: #ffe600;
+  padding: 12px 0;
+}
+
 </style>
